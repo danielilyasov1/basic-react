@@ -1,3 +1,18 @@
 h1{
   color: pink;
 }
+.lightMood{
+  background-color: rgba(89, 141, 172, 0.832);
+  color: rgb(35, 51, 53);
+  filter: brightness(150%);
+
+}
+.darkMood{
+  background-color: rgba(116, 185, 225, 0.832);
+  color: rgb(255, 255, 255);
+  filter: brightness(50%);
+
+}
+h1{
+  font-size: 30px;
+}

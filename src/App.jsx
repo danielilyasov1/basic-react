@@ -1,14 +1,16 @@
 import './App.css';
 import React from 'react';
+import './App.css';
 import ShowTime from './cmps/show-time.jsx'
 
 export class App extends React.Component {
-  render(){
 
+  render(){
     return (
       <div className="App">
         <h1>hello</h1>
         <ShowTime />
+        
       </div>
     )
   }
