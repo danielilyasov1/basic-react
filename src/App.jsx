@@ -1,19 +1,26 @@
 import './App.css';
 import React from 'react';
 import './App.css';
-import ShowTime from './cmps/show-time.jsx'
+import ShowTime from './cmps/show-time.jsx';
+import CountDown from './cmps/count-down.jsx';
+import WhoWatch from './cmps/who-watch.jsx';
 
-export class App extends React.Component {
+function App() {
 
-  render(){
-    return (
-      <div className="App">
-        <h1>hello</h1>
-        <ShowTime />
-        
-      </div>
-    )
+
+  function endTimeSound() {
+      const endTimeSound = new Audio('sound/WillBeRightBack.mp3')
+      endTimeSound.play()
   }
+
+  return (
+      <>
+          <ShowTime />
+          <CountDown targetTime={Date.now() + 1000 * 30} dueFanc={endTimeSound} />
+          <WhoWatch />
+      </>
+  )
 }
 
-export default App;
+
+export default App

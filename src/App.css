@@ -1,18 +1,183 @@
-h1{
-  color: pink;
+* {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.lightMood{
-  background-color: rgba(89, 141, 172, 0.832);
-  color: rgb(35, 51, 53);
-  filter: brightness(150%);
 
+.wheather-container {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
+  width: 350px;
+  flex-direction: column;
+  color: rgb(0, 183, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
 }
-.darkMood{
-  background-color: rgba(116, 185, 225, 0.832);
-  color: rgb(255, 255, 255);
-  filter: brightness(50%);
+.wheather-container img {
+  width: 150px;
+  display: block;
+  margin: -1rem auto;
+}
 
+.wheather-container button {
+  width: 150px;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
+  color: rgb(0, 255, 110);
+  font-weight: bold;
 }
-h1{
-  font-size: 30px;
+
+.wheather-container span {
+  font-size: 25px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dark {
+    background-color: #aaa;
+}
+
+.red {
+    color: red;
+}
+
+.timer-container {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
+  background-color: rgba(163, 154, 154, 0.169);
+  width: 350px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem auto;
+}
+
+.timer-container .timer-header {
+  font-size: 2.5rem;
+  color: black;
+}
+
+.timer-container .timer-clock {
+  box-shadow: 0px 0px 1px 1px rgb(0, 0, 0);
+  padding: 10px 0;
+  width: 150px;
+  font-size: 2.5rem;
+}
+
+.who-watch-layout {
+  background-color: #596275;
+}
+
+.who-watch-layout .who-watch-header {
+  font-size: 2.5rem;
+  padding-top: 2rem;
+  color: #a2b4de;
+}
+
+.who-watch-layout button {
+  border: none;
+  font-size: 1.2rem;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.306);
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  transition: background-color 0.5s, color 0.5s;
+  cursor: pointer;
+}
+
+.who-watch-layout button:hover {
+  background-color: #a2b4de;
+  color: white;
+}
+
+.who-watch-header {
+  margin: 1rem;
+}
+
+.user-container {
+  margin: 35px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  box-shadow: 0px 0px 4px rgb(0, 0, 0);
+}
+
+.user-container .user-img {
+  width: 190px;
+  margin-top: 4rem;
+}
+
+.user-container .remove-user-btn {
+  margin-bottom: 10px;
+}
+
+.add-user-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 100%;
+  max-width: 400px;
+  background-color: #303952;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.319);
+}
+
+.add-user-from {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-user-from input {
+  width: 50%;
+  margin: 1rem auto;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: rgb(0, 183, 255);
+}
+
+.add-user-from .add-user-btn {
+  width: 40%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.user-container .remove-user-btn {
+  margin-top: 1rem;
+  margin-bottom: 1.9rem;
+  margin-inline-end: 0.5rem;
+  background-color: rgb(253, 136, 136);
+}
+
+.user-container .change-user-btn {
+  background-color: lightgreen;
+}
+
+.who-watch-footer {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  color: rgba(198, 126, 180, 0.697);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.red {
+  color: red;
 }

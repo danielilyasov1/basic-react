@@ -1,52 +1,51 @@
-import React from 'react'
-import summer from '../../public/img/summer.png'
-import spring from '../../public/img/spring.png'
-import autumn from '../../public/img/autumn.png'
-import winter from '../../public/img/winter.png'
-export class ShowTime extends React.Component {
+import React, { Component } from 'react'
+
+export default class ShowTime extends Component {
+
     state = {
-        localTime:"",
-        mood:false,
-        seasons: [winter, spring, summer, autumn],
         date: new Date(),
-
-    }
-
-    handleClick = () => {
-        this.setState(({ mood }) => ({ mood: !mood }))
+        isDark: false,
     }
 
     intervalId
 
     componentDidMount() {
+        if (this.intervalId) return
         this.intervalId = setInterval(() => {
-            this.setState((prevState) => (prevState.localTime = new Date().toLocaleTimeString()), () => {
-            })
+            this.setState({ date: new Date() })
         }, 1000)
+        console.log('this.intervalId:', this.intervalId)
     }
 
-    currSeason() {
-        let season = Math.floor((this.state.date.getMonth() / 12) * 4) % 4
-        return this.seasons[season]
+    componentWillUnmount() {
+        clearInterval(this.intervalId)
     }
 
-    render(){
-        const {localTime} = this.state
-        var changeMood = '';
-        if(this.state.mood){
-            changeMood = 'darkMood';
-        } 
-        else{
-            changeMood = 'lightMood';
-        }
+
+    onToggleDarkMode = () => {
+        this.setState(prevState => ({ isDark: !prevState.isDark }))
+    }
+
+    get season() {
+        const seasons = ['winter', 'spring', 'summer', 'autumn']
+        const currMonth = Math.floor((this.state.date.getMonth() / 12) * 4)
+        return seasons[currMonth]
+    }
+
+    get formattedTime() {
+        return this.state.date.toLocaleTimeString()
+    }
+
+    render() {
+        const seasonUrl = require(`../img/${this.season}.png`)
+        const darkClass = this.state.isDark ? 'dark' : ''
         return (
-        <section className={changeMood} onClick={this.handleClick}>
-            <h1>clock: {localTime}</h1>
-            {/* <img src={require(`../../public/img/${this.seasonImg}.png`)} /> */}
-
-        </section>
+            <section className={`wheather-container ${darkClass}`}>
+                <img src={seasonUrl} alt='season' />
+                <span>{this.formattedTime}</span>
+                <button onClick={this.onToggleDarkMode}>Click me</button>
+            </section>
         )
     }
 }
 
-export default ShowTime;
